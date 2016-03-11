@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<CENTER>
+<header>
+<h1>Almost There Airlines</h1>
+<img src="AlmostThere.png" alt="Target" style="width:304px;height:228px">
+<header>
+<form action="login.php" method="get">
+Please enter your user ID: <input type="text" name="userID"><br>
+Please enter your password: <input type="text" name="password"><br>
+<input type="submit">
+</form>
+</CENTER>
+
+
+<?php
+$servername = "sunapee.cs.dartmouth.edu";
+$username = "danignibus";
+$password = "danisql43";
+$dbname = "danignibus_db";
+
+<?php
+   mb_internal_encoding('UTF-8');
+   mb_http_output('UTF-8');
+
+   
+       include 'sunapeedb.php';
+       $db = new SunapeeDB();
+       $db->connect();
+
+       $db->get_table($_GET["PERSON"]);
+   
+       $db->disconnect();
+?>
+
+</body>
+</html>
